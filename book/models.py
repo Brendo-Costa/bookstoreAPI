@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class book(models.Model):
+class Book(models.Model):
     """Using to abstract a book."""
 
     name = models.CharField(max_length=30)
