@@ -10,7 +10,9 @@ from .models import Book
 def books(request): 
     
     if request.method == 'GET':
+
         books = Book.objects.all()
+
         output = [{
             'name': book.name,
             'category': book.category,
@@ -18,6 +20,21 @@ def books(request):
         } for book in books]
     
     elif request.method == 'POST':
-        return Response(request.data)
-    
+        
+        name = request.data.get('name')
+        category = request.data.get('category')
+        author = request.data.get('author')
+
+        book = Book.objects.create(
+            name = name,
+            category = category,
+            author = author,
+        )
+
+        output = {
+            'name': book.name,
+            'category': book.category,
+            'author': book.author,
+        } 
+        
     return Response(output)
