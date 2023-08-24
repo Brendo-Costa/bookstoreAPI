@@ -1,16 +1,20 @@
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+#from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 from .models import Book
+
 # Create your views here.
 
 
 """Using to response all books after request."""
-@api_view(['GET', 'POST'])
+#@api_view(['GET', 'POST'])
 
-def books(request): 
+class BookAPIView(APIView): 
     
-    if request.method == 'GET':
 
+    """Get method using to return all of the books store in the db."""
+    def get(self, request):
+        
         books = Book.objects.all()
 
         output = [{
@@ -18,9 +22,12 @@ def books(request):
             'category': book.category,
             'author': book.author,
         } for book in books]
+
+        return Response(output)
     
-    elif request.method == 'POST':
-        
+    """Post method using to read one object in db."""
+    def post(self, request):
+
         name = request.data.get('name')
         category = request.data.get('category')
         author = request.data.get('author')
@@ -37,4 +44,4 @@ def books(request):
             'author': book.author,
         } 
         
-    return Response(output)
+        return Response(output)
