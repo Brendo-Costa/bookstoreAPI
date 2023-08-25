@@ -2,6 +2,7 @@ from rest_framework.response import Response
 #from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from .models import Book
+from .serializers import BookSerializer
 
 # Create your views here.
 
@@ -16,14 +17,9 @@ class BookAPIView(APIView):
     def get(self, request):
         
         books = Book.objects.all()
-
-        output = [{
-            'name': book.name,
-            'category': book.category,
-            'author': book.author,
-        } for book in books]
-
-        return Response(output)
+        serializer = BookSerializer(books, many=True)
+        return Response(serializer.data)
+    
     
     """Post method using to read one object in db."""
     def post(self, request):
