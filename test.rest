@@ -1,0 +1,24 @@
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{
+    "username": "aldenir.costa",
+    "password": "capacete1040.",
+    "email": "aldenir.brendo@gmail.com"
+}
+
+###
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username": "aldenir",
+    "password": "capacete1040."
+}
+
+###
+GET  http://127.0.0.1:8000/test_token/
+Content-Type: application/json
+Authorization: Token 514ba3f9b0fdce4fb1f3740ad5ad67880afa8578
+
+{}

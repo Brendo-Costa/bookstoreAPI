@@ -1,6 +1,9 @@
+"""This codes means the serializers presents in the app."""
 from .models import Book, Category
 from rest_framework import serializers
 from drf_writable_nested import WritableNestedModelSerializer
+
+
 
 
 class CategorySerializer(serializers.ModelSerializer):
