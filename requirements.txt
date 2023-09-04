@@ -1,6 +1,16 @@
 asgiref==3.7.2
+cfgv==3.4.0
+distlib==0.3.7
 Django==4.2.4
 djangorestframework==3.14.0
+drf-writable-nested==0.7.0
+filelock==3.12.3
+identify==2.5.27
+nodeenv==1.8.0
+platformdirs==3.10.0
+pre-commit==3.4.0
 pytz==2023.3
+PyYAML==6.0.1
 sqlparse==0.4.4
 typing_extensions==4.7.1
+virtualenv==20.24.4

@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/login/
+POST http://127.0.0.1:8000/user/login/
 Content-Type: application/json
 
 {
@@ -17,8 +17,50 @@ Content-Type: application/json
 }
 
 ###
-GET  http://127.0.0.1:8000/test_token/
+GET  http://127.0.0.1:8000/user/test_token/
+Content-Type: application/json
+Authorization: Token 153444ede0268c749e70eac504d233beb871238b
+
+{}
+
+###
+DELETE  http://127.0.0.1:8000/book/delete/3
 Content-Type: application/json
 Authorization: Token 514ba3f9b0fdce4fb1f3740ad5ad67880afa8578
 
 {}
+
+###
+GET http://127.0.0.1:8000/user/list
+Content-Type: application/json
+Authorization: Token 3ee62449c3b8125f3ec69c9d163e6104c4aaa94a
+
+{}
+
+
+###
+POST  http://127.0.0.1:8000/user/logout/
+Content-Type: application/json
+Authorization: Token 3ee62449c3b8125f3ec69c9d163e6104c4aaa94a
+
+{}
+
+###
+GET   http://127.0.0.1:8000/book/list/
+Content-Type: application/json
+#Authorization: Token 514ba3f9b0fdce4fb1f3740ad5ad67880afa8578
+
+{}
+
+###
+POST    http://127.0.0.1:8000/book/create/
+Content-Type: application/json
+#Authorization: Token 514ba3f9b0fdce4fb1f3740ad5ad67880afa8578
+
+{
+    "name": "teste_name",
+    "category": {
+        "category": "teste_category"
+    },
+    "author": "teste_author"
+}
