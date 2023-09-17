@@ -33,7 +33,7 @@ Authorization: Token 514ba3f9b0fdce4fb1f3740ad5ad67880afa8578
 ###
 GET http://127.0.0.1:8000/user/list
 Content-Type: application/json
-Authorization: Token 3ee62449c3b8125f3ec69c9d163e6104c4aaa94a
+Authorization: Token 153444ede0268c749e70eac504d233beb871238b
 
 {}
 

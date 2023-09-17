@@ -1,0 +1,8 @@
+#Cache data
+**/__pycache__
+
+#Virtual Enviroiment
+venv
+
+#Data Base
+db.sqlite3
