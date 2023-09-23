@@ -16,14 +16,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u+q2_s(1qy9=7u)l#+=l8j7e&%)g&))p!lkfywn$u!u!78y&4c'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 
 # Application definition
@@ -81,7 +76,6 @@ REST_FRAMEWORK = {
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-ALLOWED_HOSTS = []
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -94,16 +88,7 @@ ALLOWED_HOSTS = []
 } """
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'brendocosta',
-        'PASSWORD': 'capacete',
-        'HOST': 'bookstore_db', #nome do container que está o banco de dados
-        'PORT': "5432",
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -146,3 +131,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+try:
+    from core.local_settings import *
+except:
+    ImportError
